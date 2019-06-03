@@ -16,4 +16,8 @@ interface {{ str_interfaces['int'] }}
  ipv6 address {{ str_interfaces['ipv6'] }}
 {% endif %}
 {#======================================================#}
+{%if 'link-local' in str_interfaces%}
+ ipv6 address {{ str_interfaces['link-local'] }} link-local
+{% endif %}
+{#======================================================#}
 {% endfor %}
